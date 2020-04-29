@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Name That Color</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body x-data="window.App();" x-init="mounted();">
+    <script src="./index.js"></script>
+
+    <div class="header">
+      <h1>Name That Color</h1>
+    </div>
+
+    <div class="container">
+      <input type="text" x-on:keyup="setColorName" x-model="colorHex" placeholder="#FFFFFF" />
+
+      <div class="result-row">
+        <div></div>
+        <div>
+          <div class="swatch" :style="`background-color: ${colorHex}`"></div>
+          <span x-text="name" />
+        </div>
+        <div class="icons" :class="{'inactive': !name}">
+          <img
+            @click="clipboardSass"
+            src="/assets/sass-icon.png"
+            srcset="/assets/sass-icon@2x.png 2x, /assets/sass-icon@3x.png 3x"
+          />
+          <img @click="clipboardLess" src="/assets/less-icon.svg" />
+        </div>
+      </div>
+    </div>
+
+    <div x-show="colors.length > 0" class="container">
+      <h2>History</h2>
+
+      <template x-for="color in colors" :key="color">
+        <div class="result-history-row">
+          <div>
+            <div class="swatch" :style="`background-color: ${color.hex}`"></div>
+            <div x-text="color.hex"></div>
+          </div>
+
+          <div class="name" x-text="color.name"></div>
+
+          <div class="icons" :class="{'inactive': !name}">
+            <img
+              @click="clipboardSass"
+              src="/assets/sass-icon.png"
+              srcset="/assets/sass-icon@2x.png 2x, /assets/sass-icon@3x.png 3x"
+            />
+            <img @click="clipboardLess" src="/assets/less-icon.svg" />
+          </div>
+        </div>
+      </template>
+    </div>
+  </body>
+</html>

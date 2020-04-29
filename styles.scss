@@ -1,0 +1,127 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #004643;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #001e1d;
+  font-family: 'Roboto Mono', monospace;
+}
+
+h2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  color: #e45858;
+  align-self: flex-start;
+}
+
+.header {
+  margin: 0 100px;
+
+  h1 {
+    font-family: 'Roboto Slab', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 74px;
+    /* identical to box height */
+
+    color: #fffffe;
+  }
+}
+
+.container {
+  background-color: #abd1c6;
+  border-radius: 10px;
+  width: 800px;
+  max-width: 100%;
+  margin: 23px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px;
+  font-size: 24px;
+  box-sizing: border-box;
+
+  input {
+    background-color: #f9bc60;
+    width: 473px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 24px;
+    margin: 0 auto;
+    border: 1px solid #000000;
+    padding-left: 38px;
+    margin-bottom: 40px;
+  }
+
+  .result-row {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    width: 100%;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+    }
+
+    .swatch {
+      border: 1px solid black;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+  }
+
+  .result-history-row {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    width: 100%;
+    padding: 10px 5% 10px 5%;
+    box-sizing: border-box;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .name {
+      padding-left: 20px;
+    }
+
+    .swatch {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      min-height: 20px;
+      background: #2980b9;
+      margin-right: 10px;
+    }
+  }
+
+  .icons {
+    img:first-of-type {
+      margin-right: 20px;
+    }
+
+    img {
+      transition: opacity 500ms ease-out;
+      cursor: pointer;
+    }
+
+    &.inactive {
+      img {
+        opacity: 0.25;
+      }
+    }
+  }
+}
