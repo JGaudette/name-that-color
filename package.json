@@ -1,16 +1,18 @@
 {
-  "name": "garage-io-www",
+  "name": "name-that-color",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "sass": "^1.26.3"
   },
   "dependencies": {
