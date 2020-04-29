@@ -11,14 +11,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cssnano": "^4.1.10",
     "sass": "^1.26.3"
   },
   "dependencies": {
     "@distributed/cherangi": "^1.1.6",
     "alpinejs": "^2.1.2",
-    "moment": "^2.24.0",
-    "ntcjs": "^1.1.2",
-    "socket.io-client": "^2.3.0"
+    "ntcjs": "^1.1.2"
   }
 }
