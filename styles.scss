@@ -1,3 +1,28 @@
+@mixin responsive($class) {
+  @if $class==mobile {
+    @media (max-width: 700px) {
+      @content;
+    }
+    // } @else if $class==tablet {
+    //   //tablet
+    //   @media (min-width: 731px) and (max-width: 1099px) {
+    //     @content;
+    //   }
+  } @else if $class==desktop {
+    //desktop
+    @media (min-width: 1300px) {
+      @content;
+    }
+  } @else if $class==tablet {
+    //mobile and tablet
+    @media (max-width: 1299px) {
+      @content;
+    }
+  } @else {
+    @warn "responsive mixin supports: mobile, md, lg";
+  }
+}
+
 html {
   height: 100%;
 }
@@ -11,6 +36,10 @@ body {
   flex-direction: column;
   color: #001e1d;
   font-family: 'Roboto Mono', monospace;
+
+  @include responsive(mobile) {
+    padding: 0 20px;
+  }
 }
 
 h2 {
@@ -31,10 +60,17 @@ h2 {
     font-style: normal;
     font-weight: 600;
     font-size: 56px;
-    line-height: 74px;
-    /* identical to box height */
-
     color: #fffffe;
+  }
+
+  @include responsive(mobile) {
+    margin: 0;
+
+    h1 {
+      font-size: 22px;
+      width: 100%;
+      text-align: center;
+    }
   }
 }
 
@@ -54,6 +90,7 @@ h2 {
   input {
     background-color: #f9bc60;
     width: 473px;
+    max-width: 100%;
     height: 40px;
     border-radius: 8px;
     font-size: 24px;
@@ -79,6 +116,10 @@ h2 {
       width: 30px;
       height: 30px;
       margin-right: 10px;
+    }
+
+    @include responsive(mobile) {
+      grid-template-columns: 30% 20% 50%;
     }
   }
 
@@ -122,6 +163,27 @@ h2 {
       img {
         opacity: 0.25;
       }
+    }
+  }
+}
+
+.footer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: #e45858;
+
+    &:hover {
+      color: #e45858;
+      text-decoration: underline;
     }
   }
 }

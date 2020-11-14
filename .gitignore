@@ -3,3 +3,6 @@ dist/
 *.swp
 .cache
 node_modules
+
+# Local Netlify folder
+.netlify
